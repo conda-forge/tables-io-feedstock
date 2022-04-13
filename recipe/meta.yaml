@@ -1,5 +1,5 @@
 {% set name = "tables-io" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 44199aa5e2f5636c7b88198b62050740ffa388c24037ec4385ea7cc4208e7d2b
+  sha256: 8d73e82710c9f4ef398a97f52742229576a37a441bfa105384bac9da06b1acc5
 
 build:
   number: 0
