@@ -1,5 +1,5 @@
 {% set name = "tables-io" %}
-{% set version = "0.3" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: f526a3f2d917144ebe849dd059fae58aa05fa4f623abf9b855e220feba2454f6
+  sha256: 8d73e82710c9f4ef398a97f52742229576a37a441bfa105384bac9da06b1acc5
 
 build:
   number: 0
@@ -17,9 +17,9 @@ build:
 
 requirements:
   host:
-   - python >=3.6
-   - pip
-   - setuptools_scm
+    - python >=3.6
+    - pip
+    - setuptools_scm
 
   run:
     - python >=3.6
@@ -48,3 +48,4 @@ extra:
   recipe-maintainers:
     - eacharles
     - brianv0
+    
