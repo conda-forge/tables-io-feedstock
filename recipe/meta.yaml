@@ -11,28 +11,44 @@ source:
   sha256: 309998e597336fdb861f1a37247e7c61dd9855dc75f4f777e45297e91d965968
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  noarch: python
+  number: 1
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-    - setuptools_scm
+outputs:
+  - name: {{ name }}
+    script: build_base.sh
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+        - setuptools_scm
 
-  run:
-    - python >=3.6
-    - numpy
-    - astropy
-    - h5py
-    - pandas
-    - pyarrow
-    - pytables
+      run:
+        - python >=3.6
+        - numpy
+    test:
+      imports:
+        - tables_io
 
-test:
-  imports:
-    - tables_io
+  - name: {{ name }}-full
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('tables-io', max_pin='x.x.x') }}
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
+        - pytables
+    test:
+      imports:
+        - tables_io
+        - astropy
+        - h5py
+        - pandas
+        - pyarrow
 
 about:
   home: http://github.com/LSSTDESC/tables_io
