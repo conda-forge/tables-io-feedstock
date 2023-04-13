@@ -14,7 +14,7 @@ build:
   number: 1
 
 outputs:
-  - name: {{name}}
+  - name: {{ name }}
     script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
     build:
       noarch: python
@@ -46,9 +46,9 @@ outputs:
       imports:
         - tables_io
         - astropy
-	- h5py
-	- pandas
-	- pyarrow
+        - h5py
+        - pandas
+        - pyarrow
 
 about:
   home: http://github.com/LSSTDESC/tables_io
