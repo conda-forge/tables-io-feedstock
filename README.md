@@ -33,6 +33,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-tables--io-green.svg)](https://anaconda.org/conda-forge/tables-io) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/tables-io.svg)](https://anaconda.org/conda-forge/tables-io) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/tables-io.svg)](https://anaconda.org/conda-forge/tables-io) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/tables-io.svg)](https://anaconda.org/conda-forge/tables-io) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-tables--io--full-green.svg)](https://anaconda.org/conda-forge/tables-io-full) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/tables-io-full.svg)](https://anaconda.org/conda-forge/tables-io-full) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/tables-io-full.svg)](https://anaconda.org/conda-forge/tables-io-full) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/tables-io-full.svg)](https://anaconda.org/conda-forge/tables-io-full) |
 
 Installing tables-io
 ====================
@@ -44,16 +45,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `tables-io` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `tables-io, tables-io-full` can be installed with `conda`:
 
 ```
-conda install tables-io
+conda install tables-io tables-io-full
 ```
 
 or with `mamba`:
 
 ```
-mamba install tables-io
+mamba install tables-io tables-io-full
 ```
 
 It is possible to list all of the versions of `tables-io` available on your platform with `conda`:
