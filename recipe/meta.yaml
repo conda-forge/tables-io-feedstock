@@ -11,7 +11,7 @@ source:
   sha256: eb0fbfda71399413770f16f473c50968c20c4b8b67e0918507353d000e7575b4
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
@@ -37,7 +37,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('tables-io', max_pin='x.x.x') }}
-        - astropy
+        - astropy-base
         - h5py
         - pandas
         - pyarrow
@@ -45,7 +45,7 @@ outputs:
     test:
       imports:
         - tables_io
-        - astropy
+        - astropy-base
         - h5py
         - pandas
         - pyarrow
