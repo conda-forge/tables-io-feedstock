@@ -29,7 +29,7 @@ outputs:
         - python >={{ python_min }}
         - click
         - numpy
-	- deprecated
+        - deprecated
 	- pytables
 	- h5py
 	- pandas
