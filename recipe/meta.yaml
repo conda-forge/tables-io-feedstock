@@ -1,5 +1,6 @@
 {% set name = "tables-io" %}
-{% set version = "0.9.10" %}
+{% set version = "1.0.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +12,7 @@ source:
   sha256: eb0fbfda71399413770f16f473c50968c20c4b8b67e0918507353d000e7575b4
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name }}
@@ -25,8 +26,13 @@ outputs:
         - setuptools_scm
 
       run:
-        - python >=3.6
+        - python >={{ python_min }}
+        - click
         - numpy
+	- deprecated
+	- pytables
+	- h5py
+	- pandas
     test:
       imports:
         - tables_io
@@ -37,18 +43,11 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('tables-io', max_pin='x.x.x') }}
-        - astropy
-        - h5py
-        - pandas
+        - astropy-base
         - pyarrow
-        - pytables
     test:
       imports:
         - tables_io
-        - astropy
-        - h5py
-        - pandas
-        - pyarrow
 
 about:
   home: http://github.com/LSSTDESC/tables_io
