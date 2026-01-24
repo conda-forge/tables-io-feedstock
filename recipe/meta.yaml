@@ -1,5 +1,5 @@
 {% set name = "tables-io" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -9,10 +9,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 8fe376ca0476cafeb68072fabb2ac77bde619ec7b2bab8096c5a8056326d2268
+  sha256: 7c6fecb8fc01fcbcd4dc8ca660caf482672337cb50136c6214409b5af6cf798b
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: {{ name }}
@@ -47,7 +47,7 @@ outputs:
         - python {{ python_min }}
         - pip
         - setuptools
-        - setuptools_scm    
+        - setuptools_scm
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('tables-io', max_pin='x.x.x') }}
